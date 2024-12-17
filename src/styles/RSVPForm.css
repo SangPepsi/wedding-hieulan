@@ -1,0 +1,49 @@
+/* RSVPForm.css */
+.rsvp-form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.rsvp-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.rsvp-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.rsvp-form label {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.rsvp-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.rsvp-form button:hover {
+    background-color: #45a049;
+}
+
+.error-message {
+    color: red;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}

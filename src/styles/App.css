@@ -1,0 +1,23 @@
+/* App.css */
+
+/* Đặt nền trắng cho toàn bộ trang */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Màu trắng */
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Màu chữ trung tính */
+}
+
+/* Đảm bảo các phần tử container không bị ảnh hưởng bởi các nền khác */
+#root {
+    background-color: #ffffff; /* Màu trắng */
+    min-height: 100vh; /* Đảm bảo root bao phủ toàn bộ chiều cao */
+}
+
+/* Reset padding/margin cho các phần tử HTML */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

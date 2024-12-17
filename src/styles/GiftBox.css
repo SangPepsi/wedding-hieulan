@@ -1,0 +1,252 @@
+/* Vị trí và phong cách icon */
+.gift-box-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.gift-box-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #ff6f61;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gift-box-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal */
+.gift-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.gift-modal-content {
+    width: 90%;
+    max-width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.close-button:hover {
+    color: #ff6f61;
+}
+
+.gift-details {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.qr-codes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Khoảng cách giữa các QR Code */
+    margin: 20px 0;
+}
+
+.qr-code {
+    text-align: center;
+    cursor: pointer;
+}
+
+.qr-code img {
+    width: 150px; /* Kích thước ảnh QR */
+    height: 150px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.qr-code img:hover {
+    transform: scale(1.05);
+}
+
+.qr-title {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
+}
+.gift-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.gift-details ul li {
+    margin: 5px 0;
+}/* Vị trí và phong cách icon */
+.gift-box-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.gift-box-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #ff6f61;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gift-box-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal */
+.gift-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.gift-modal-content {
+    width: 90%;
+    max-width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.close-button:hover {
+    color: #ff6f61;
+}
+
+.gift-details {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.qr-codes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Khoảng cách giữa các QR Code */
+    margin: 20px 0;
+}
+
+.qr-code {
+    text-align: center;
+    cursor: pointer;
+}
+
+.qr-code img {
+    width: 150px; /* Kích thước ảnh QR */
+    height: 150px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.qr-code img:hover {
+    transform: scale(1.05);
+}
+
+.qr-title {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
+}
+.gift-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.gift-details ul li {
+    margin: 5px 0;
+}
+/* Overlay phóng to ảnh QR */
+.qr-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Nền tối */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10001; /* Che phủ toàn bộ màn hình */
+}
+
+.qr-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.qr-overlay img:hover {
+    transform: scale(1.05);
+}

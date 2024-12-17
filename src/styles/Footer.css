@@ -1,0 +1,16 @@
+/* src/styles/Footer.css */
+
+/* Chỉnh nền màu trắng nhạt cho Footer */
+.footer {
+    background-color: #fafafa; /* Màu nền trắng nhạt */
+    color: #00796b; /* Màu chữ cho footer */
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    border-top: 2px solid #00796b; /* Đường viền trên footer */
+}
+
+/* Thêm hiệu ứng hover cho văn bản */
+.footer p:hover {
+    color: #ff6347; /* Thay đổi màu chữ khi hover */
+}

@@ -1,0 +1,96 @@
+/* Thanh điều hướng */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7); /* Nền mờ */
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Container của navbar */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Liên kết trong navbar */
+.navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* Màu sắc và kiểu dáng cho liên kết */
+.navbar-link a {
+    text-decoration: none;
+    color: #d6a2e8; /* Màu chữ tím nhạt */
+    margin: 0 20px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-link a:hover {
+    background-color: rgba(255, 99, 71, 0.3); /* Hiệu ứng hover nền */
+    color: #b97fd4; /* Màu chữ tím đậm khi hover */
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+/* Thanh menu toggle cho mobile */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar-toggle-icon {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Khi menu toggle được mở trên mobile */
+.navbar-links.active {
+    display: flex;
+    flex-direction: column; /* Hiển thị liên kết dưới dạng cột khi mở menu trên mobile */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+}
+
+/* Responsive cho mobile */
+@media screen and (max-width: 768px) {
+    .navbar-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: no-wrap; /* Đảm bảo các liên kết không bị xuống dòng */
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-links.active {
+        display: block; /* Khi mở menu, các liên kết sẽ hiển thị dưới dạng cột */
+    }
+
+    .navbar-link a {
+        font-size: 1.1rem; /* Giảm kích thước font trên mobile */
+    }
+}

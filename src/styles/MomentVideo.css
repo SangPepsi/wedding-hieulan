@@ -1,0 +1,24 @@
+.moment-video {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+}
+
+.video-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.video-player {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}

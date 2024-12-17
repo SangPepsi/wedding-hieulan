@@ -1,0 +1,125 @@
+/* src/styles/Header.css */
+
+/* Điều chỉnh ảnh bìa */
+.cover-image {
+    position: relative;
+    width: 100%; /* Chiều rộng khung */
+    height: 60vh; /* Điều chỉnh chiều cao ảnh bìa theo tỷ lệ phần trăm của viewport */
+    overflow: hidden; /* Ẩn phần thừa nếu có */
+    background-color: #f0f0f0; /* Màu nền nếu ảnh không lấp đầy khung */
+}
+
+.cover-image img {
+    width: 100%; /* Đảm bảo ảnh co theo chiều rộng khung */
+    height: 100%; /* Đảm bảo ảnh co theo chiều cao khung */
+    object-fit: contain; /* Hiển thị toàn bộ nội dung ảnh mà không bị cắt xén */
+    object-position: center; /* Căn giữa ảnh trong khung */
+    background-color: #000; /* Màu nền (nếu ảnh không lấp đầy khung) */
+}
+
+
+/* Nội dung trên ảnh bìa */
+.cover-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+.cover-title {
+    font-size: 2rem; /* Sử dụng rem để dễ dàng thay đổi kích thước */
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Nội dung header */
+.header-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.invitation-text {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.invitation-description {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+/* Hiển thị ảnh chú rể và cô dâu */
+.header-images {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.bride-groom-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+/* CSS chung cho nhà trai và nhà gái */
+.house-info {
+    display: flex; /* Sử dụng Flexbox để hiển thị ngang hàng */
+    justify-content: space-around; /* Căn đều các ô */
+    align-items: center;
+    gap: 20px; /* Khoảng cách giữa hai ô */
+    margin: 30px 0;
+}
+
+.house {
+    flex: 1; /* Chia đều khoảng không gian cho hai ô */
+    max-width: 400px; /* Giới hạn chiều rộng tối đa */
+    background-color: #f0f8ff; /* Màu nền xanh nhạt */
+    border: 2px solid #87CEFA; /* Viền xanh nhạt */
+    border-radius: 10px; /* Bo tròn viền */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng nhẹ */
+    padding: 20px; /* Khoảng cách bên trong */
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Màu chữ xám đậm */
+    transition: transform 0.3s ease; /* Hiệu ứng hover */
+}
+
+/* Hiệu ứng khi hover vào từng ô */
+.house:hover {
+    transform: scale(1.05); /* Phóng to nhẹ khi di chuột */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.house h4 {
+    font-size: 1.5rem;
+    color: #4682B4; /* Màu xanh dương đậm cho tiêu đề */
+    margin-bottom: 10px;
+}
+
+.house p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+/* Responsive: Giữ nguyên kích thước trên điện thoại */
+@media (max-width: 768px) {
+    .house-info {
+        flex-direction: column; /* Xếp dọc trên điện thoại */
+        gap: 15px; /* Giảm khoảng cách */
+    }
+
+    .house {
+        width: 90%; /* Chiếm gần hết chiều ngang màn hình */
+        padding: 15px;
+    }
+}
+
