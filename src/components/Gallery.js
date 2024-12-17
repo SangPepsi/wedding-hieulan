@@ -8,24 +8,26 @@ function Gallery() {
         '/images/anh4.JPG',
     ];
 
-    const [currentIndex, setCurrentIndex] = useState(null);
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-    const openModal = (index) => {
+    const openModal = (image, index) => {
+        setSelectedImage(image);
         setCurrentIndex(index);
     };
 
-    const closeModal = (e) => {
-        if (e.target.classList.contains('modal')) {
-            setCurrentIndex(null);
-        }
+    const closeModal = () => {
+        setSelectedImage(null);
     };
 
     const goToPrevious = () => {
         setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+        setSelectedImage(images[currentIndex === 0 ? images.length - 1 : currentIndex - 1]);
     };
 
     const goToNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+        setSelectedImage(images[currentIndex === images.length - 1 ? 0 : currentIndex + 1]);
     };
 
     return (
@@ -36,7 +38,7 @@ function Gallery() {
                     <div
                         className="grid-item"
                         key={index}
-                        onClick={() => openModal(index)}
+                        onClick={() => openModal(image, index)} // Xóa triggerFireworks
                     >
                         <img
                             src={image}
@@ -47,11 +49,11 @@ function Gallery() {
                 ))}
             </div>
 
-            {currentIndex !== null && (
+            {selectedImage && (
                 <div className="modal" onClick={closeModal}>
-                    <div className="modal-content">
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                         <img
-                            src={images[currentIndex]}
+                            src={selectedImage}
                             alt="Xem ảnh lớn"
                             className="modal-image"
                         />
@@ -59,7 +61,7 @@ function Gallery() {
                             <button onClick={goToPrevious}>←</button>
                             <button onClick={goToNext}>→</button>
                         </div>
-                        <button className="close-button" onClick={() => setCurrentIndex(null)}>×</button>
+                        <button className="close-button" onClick={closeModal}>×</button>
                     </div>
                 </div>
             )}

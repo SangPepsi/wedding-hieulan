@@ -14,7 +14,7 @@ function HouseInfo() {
             <div className="house">
                 <h4>Nhà Gái</h4>
                 <p>Bố: <strong>Lê Văn Cương</strong></p>
-                <p>Mẹ: <strong>Đăng Thị Thịnh</strong></p>
+                <p>Mẹ: <strong>Đăng Thị Thinh</strong></p>
                 <p className="address">Địa chỉ: Đội 15 - xã Liên Phương, Tp Hưng Yên</p>
             </div>
         </div>

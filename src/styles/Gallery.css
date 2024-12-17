@@ -1,101 +1,117 @@
+/* src/styles/Gallery.css */
+
+/* Khung thư viện ảnh */
 .gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+    padding: 15px 5px; /* Giảm padding để thư viện ảnh nhỏ gọn hơn */
+    background-color: #f9f9f9;
 }
 
+/* Tiêu đề thư viện ảnh */
 .gallery-title {
-    margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 1.4em; /* Giảm kích thước tiêu đề */
     color: #333;
+    margin-bottom: 10px; /* Giảm khoảng cách dưới tiêu đề */
 }
 
+/* Grid để hiển thị ảnh */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    width: 100%;
-    max-width: 1000px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px; /* Giảm khoảng cách giữa các ảnh */
+    max-width: 50%; /* Giảm chiều rộng của grid xuống 50% */
+    margin: 0 auto; /* Canh giữa grid */
 }
 
+/* Định dạng cho mỗi ảnh trong grid */
 .grid-item {
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px; /* Bo tròn góc ảnh thêm một chút */
+    width: 100%;
+    height: auto;
 }
 
-.grid-item:hover {
-    transform: scale(1.05);
-}
-
+/* Hình ảnh trong grid */
 .grid-image {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* Giữ tỷ lệ ảnh trong grid */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
+/* Hiệu ứng hover cho ảnh trong grid */
+.grid-image:hover {
+    transform: scale(1.05); /* Hiệu ứng phóng to nhẹ khi hover */
+}
+
+/* Modal hiển thị ảnh lớn */
 .modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Màu nền đen với độ mờ */
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 9999;
 }
 
+/* Nội dung modal */
 .modal-content {
     position: relative;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 40%; /* Giảm độ rộng modal xuống 40% */
+    max-height: 50%; /* Giảm chiều cao modal */
+    background-color: white;
+    border-radius: 6px; /* Bo tròn các góc modal */
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 
+/* Ảnh trong modal */
 .modal-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+    width: 100%; /* Chiếm hết chiều rộng modal */
+    height: auto; /* Tự động điều chỉnh chiều cao dựa vào chiều rộng */
+    max-height: 60vh; /* Giới hạn chiều cao ảnh */
+    object-fit: contain; /* Giữ nguyên tỷ lệ ảnh, không bị cắt, tự động thu nhỏ */
 }
 
+/* Nút điều hướng chuyển ảnh */
 .navigation-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    transform: translateY(-50%);
+    padding: 0 10px; /* Thêm một chút padding để các nút không bị quá gần ảnh */
 }
-
-.navigation-buttons button {
-    background: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background 0.3s ease;
-}
-
-.navigation-buttons button:hover {
-    background: #555;
-}
-
+/* Nút đóng modal */
 .close-button {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: #ff5e57;
-    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     border: none;
-    padding: 8px 12px;
     border-radius: 50%;
-    cursor: pointer;
+    width: 22px;
+    height: 22px;
     font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Hiệu ứng hover cho nút đóng */
 .close-button:hover {
-    background: #ff3b2f;
+    background-color: rgba(0, 0, 0, 0.8);
 }
