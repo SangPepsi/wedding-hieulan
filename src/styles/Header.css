@@ -57,8 +57,10 @@
 .header-images {
     display: flex;
     justify-content: center;
+    align-items: center; /* Căn giữa theo chiều dọc */
     gap: 30px;
     margin-top: 20px;
+    flex-wrap: wrap; /* Đảm bảo ảnh không tràn ra ngoài khung trên màn hình nhỏ */
 }
 
 .bride-groom-image {
@@ -67,30 +69,15 @@
     object-fit: cover;
     border-radius: 50%;
     border: 5px solid white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển động khi hover */
 }
 
-/* CSS chung cho nhà trai và nhà gái */
-.house-info {
-    display: flex; /* Sử dụng Flexbox để hiển thị ngang hàng */
-    justify-content: space-around; /* Căn đều các ô */
-    align-items: center;
-    gap: 20px; /* Khoảng cách giữa hai ô */
-    margin: 30px 0;
+/* Hiệu ứng khi hover vào ảnh */
+.bride-groom-image:hover {
+    transform: scale(1.1); /* Phóng to ảnh một chút khi di chuột */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Thêm bóng đổ khi hover */
 }
 
-.house {
-    flex: 1; /* Chia đều khoảng không gian cho hai ô */
-    max-width: 400px; /* Giới hạn chiều rộng tối đa */
-    background-color: #f0f8ff; /* Màu nền xanh nhạt */
-    border: 2px solid #87CEFA; /* Viền xanh nhạt */
-    border-radius: 10px; /* Bo tròn viền */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng nhẹ */
-    padding: 20px; /* Khoảng cách bên trong */
-    text-align: center;
-    font-family: 'Arial', sans-serif;
-    color: #333; /* Màu chữ xám đậm */
-    transition: transform 0.3s ease; /* Hiệu ứng hover */
-}
 
 /* Hiệu ứng khi hover vào từng ô */
 .house:hover {
@@ -109,7 +96,6 @@
     line-height: 1.5;
     margin: 5px 0;
 }
-
 /* Responsive: Giữ nguyên kích thước trên điện thoại */
 @media (max-width: 768px) {
     .house-info {

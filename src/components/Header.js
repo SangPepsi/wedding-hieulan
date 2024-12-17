@@ -32,16 +32,22 @@ function Header() {
                 </p>
 
                 <div id="house-images" className="header-images">
-                    <img
-                        src="/images/hieu.JPG"
-                        alt="Chú Rể"
-                        className="bride-groom-image"
-                    />
-                    <img
-                        src="/images/lan.JPG"
-                        alt="Cô Dâu"
-                        className="bride-groom-image"
-                    />
+                    <div className="bride-groom-container">
+                        <img
+                            src="/images/hieu.JPG"
+                            alt="Chú Rể"
+                            className="bride-groom-image"
+                        />
+                        <p className="bride-groom-name">Trung Hiếu</p> {/* Tên chú rể */}
+                    </div>
+                    <div className="bride-groom-container">
+                        <img
+                            src="/images/lan.JPG"
+                            alt="Cô Dâu"
+                            className="bride-groom-image"
+                        />
+                        <p className="bride-groom-name">Phương Lan</p> {/* Tên cô dâu */}
+                    </div>
                 </div>
 
                 {/* Component HouseInfo sẽ chứa thông tin gia đình */}
