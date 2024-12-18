@@ -1,91 +1,76 @@
-.countdown {
+/* Toàn bộ container */
+.countdown-container {
     text-align: center;
-    padding: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f3f4f6;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin: 30px auto;
-    max-width: 450px;
+    font-family: 'Arial', sans-serif;
     color: #333;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 20px auto;
 }
 
+/* Tiêu đề */
 .countdown-title {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 25px;
-    color: #4A90E2;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #4a90e2;
 }
 
-.countdown-timer {
+/* Khối đồng hồ */
+.countdown-blocks {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
-.time-unit {
-    width: 90px;
-    height: 90px;
-    background: #fff;
+/* Mỗi khối thời gian */
+.time-block {
+    background: #ffffff;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 20px 15px;
+    width: 100px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
 }
 
-.time-unit:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+/* Hiệu ứng hover */
+.time-block:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Số thời gian */
 .time-number {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 8px;
-    color: #e85d75;
+    color: #ff5722;
 }
 
+/* Nhãn thời gian */
 .time-label {
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-transform: uppercase;
-    color: #888;
+    color: #666;
+    margin-top: 5px;
+    display: block;
 }
 
-/* Responsive cho màn hình nhỏ */
+/* Responsive */
 @media (max-width: 768px) {
-    .time-unit {
+    .time-block {
         width: 80px;
-        height: 80px;
+        padding: 15px;
     }
 
     .time-number {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .time-label {
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .time-unit {
-        width: 70px;
-        height: 70px;
-    }
-
-    .time-number {
-        font-size: 1.6rem;
-    }
-
-    .time-label {
-        font-size: 0.75rem;
-    }
-
-    .countdown-title {
-        font-size: 1.5rem;
+        font-size: 0.9rem;
     }
 }

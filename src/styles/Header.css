@@ -35,6 +35,48 @@
     overflow: hidden;
     background-color: #f0f0f0;
 }
+/* Phần tiêu đề câu chuyện */
+.story-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4682B4;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Nội dung câu chuyện */
+.story-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+    margin: 10px 0;
+    padding: 0 20px;
+}
+
+/* Khu vực ảnh minh họa câu chuyện */
+.story-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.story-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hiệu ứng hover cho ảnh */
+.story-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
 .cover-image img {
     width: 100%;

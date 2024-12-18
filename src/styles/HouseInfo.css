@@ -1,45 +1,109 @@
+/* Thiết kế tổng thể */
 .house-info {
     display: flex;
-    justify-content: center; /* Căn giữa các phần tử theo chiều ngang */
-    align-items: flex-start; /* Căn các phần tử theo chiều dọc ở đầu */
-    gap: 20px; /* Khoảng cách giữa các ô */
-    margin-top: 50px; /* Tạo khoảng cách từ trên cùng */
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+    padding: 0 10px;
 }
 
+/* Khối thông tin */
 .house {
-    flex: 1; /* Mỗi phần chiếm không gian ngang đều */
-    padding: 15px; /* Giảm padding để thu nhỏ nội dung bên trong */
-    border: 2px solid #0066cc; /* Viền khung rõ ràng */
-    border-radius: 10px; /* Viền bo tròn */
-    background-color: #f9f9f9; /* Màu nền nhẹ */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho các khung */
-    max-width: 500px; /* Kéo dài chiều rộng tối đa của mỗi ô */
-    width: 100%; /* Đảm bảo khối chiếm toàn bộ không gian có sẵn */
+    flex: 1;
+    padding: 20px;
+    background: #f8f9fa; /* Màu nền sáng nhẹ */
+    border: 2px solid #e2e6ea; /* Viền nhẹ nhàng, tông xám nhạt */
+    border-radius: 15px; /* Bo góc mềm mại */
+    background-image: url('https://www.transparenttextures.com/patterns/linen.png'); /* Hoa văn nhẹ nhàng */
+    background-size: cover;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
     display: flex;
-    flex-direction: column; /* Đảm bảo các phần tử bên trong sắp xếp theo cột */
-    overflow: hidden; /* Ẩn phần tràn ra ngoài */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 250px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hiệu ứng khi hover */
+.house:hover {
+    transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Đổ bóng mạnh hơn khi hover */
+}
+
+/* Tiêu đề khối */
 .house h4 {
-    font-size: 1.4em; /* Giảm kích thước tiêu đề */
-    color: #0066cc;
-    margin-bottom: 10px;
-    text-align: center; /* Căn giữa tiêu đề */
+    font-size: 1.4em;
+    color: #0066cc; /* Màu xanh cho tiêu đề */
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
+/* Căn chỉnh bố mẹ thẳng hàng */
+.parent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start; /* Căn trái */
+}
+
+/* Thông tin chi tiết */
 .house p {
-    font-size: 1em; /* Giảm kích thước chữ trong các thông tin */
-    margin: 5px 0;
-    text-align: center; /* Căn giữa các thông tin */
-}
-
-.house .address {
-    display: inline; /* Hiển thị địa chỉ trên một dòng */
-    white-space: nowrap; /* Đảm bảo địa chỉ không bị ngắt dòng */
-    word-wrap: break-word; /* Ngắt từ khi vượt quá chiều rộng của khung */
-    font-size: 0.9em; /* Giảm kích thước chữ địa chỉ */
+    font-size: 1em;
+    color: #555;
+    margin: 0;
 }
 
 .house strong {
     color: #333;
+}
+
+/* Nhãn cho các thông tin */
+.house .label {
+    font-weight: bold;
+    color: #0066cc;
+}
+
+/* Các nút chức năng */
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Nút sửa */
+.edit {
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border: 2px solid #28a745;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.edit:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Nút xóa */
+.delete {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border: 2px solid #dc3545;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.delete:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
 }

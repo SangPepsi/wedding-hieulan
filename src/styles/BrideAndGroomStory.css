@@ -1,0 +1,108 @@
+/* Container của câu chuyện tình yêu */
+#story-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+
+/* Căn chỉnh ảnh chú rể và cô dâu */
+.bride-groom-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Chú rể (bên trái) */
+.bride-groom-container.left {
+    margin-right: 40px;
+}
+
+/* Cô dâu (bên phải) */
+.bride-groom-container.right {
+    margin-left: 40px;
+}
+
+/* Ảnh chú rể và cô dâu */
+.bride-groom-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hiệu ứng khi hover vào ảnh */
+.bride-groom-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Trái tim ở giữa */
+.heart-shape {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-color: #ff69b4;
+    clip-path: polygon(50% 0%, 0% 35%, 0% 100%, 50% 65%, 100% 100%, 100% 35%);
+    z-index: 0;
+}
+
+/* Câu chuyện tình yêu */
+.story-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4682B4;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Nội dung câu chuyện */
+.story-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+    margin: 10px 0;
+    padding: 0 20px;
+}
+
+/* Media Queries cho responsive design */
+
+/* Khi màn hình nhỏ (mobile) */
+@media (max-width: 768px) {
+    #story-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    .bride-groom-container {
+        margin-bottom: 20px;
+    }
+
+    .bride-groom-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .story-title {
+        font-size: 1.6rem;
+    }
+
+    .story-content {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}
