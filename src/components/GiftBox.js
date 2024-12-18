@@ -36,11 +36,9 @@ function GiftBox() {
                     <div className="gift-modal-content">
                         <button className="close-button" onClick={toggleModal}>✖</button>
                         <h2>Hòm Nhận Quà Chúc Mừng</h2>
-                        <p>❤️ Cảm ơn sự hiện diện của quý vị ❤️</p>
+                        <p> Cảm ơn sự hiện diện của quý vị </p>
                         <div className="gift-details">
-                            <p><strong>📍 Tên cô dâu & chú rể:</strong> Trung Hiếu & Phương Lan</p>
-                            <p><strong>📅 Ngày tổ chức:</strong> 25 tháng 01 năm 2024</p>
-                            <p><strong>💌 Thông tin tài khoản ngân hàng:</strong></p>
+                            <p><strong>💌 Thông tin tài khoản ngân hàng</strong></p>
                             <div className="qr-codes">
                                 {/* QR Code Nhà Gái */}
                                 <div className="qr-code" onClick={() => toggleImageZoom('/images/qrLan.png')}>
@@ -49,7 +47,7 @@ function GiftBox() {
                                         alt="QR Nhà Gái"
                                         style={{ cursor: 'pointer' }}
                                     />
-                                    <p className="qr-title">QR Nhà Gái - Phương Lan</p>
+                                    <p className="qr-title">Cô dâu Phương Lan</p>
                                 </div>
 
                                 {/* QR Code Nhà Trai */}
@@ -59,11 +57,11 @@ function GiftBox() {
                                         alt="QR Nhà Trai"
                                         style={{ cursor: 'pointer' }}
                                     />
-                                    <p className="qr-title">QR Nhà Trai - Trung Hiếu</p>
+                                    <p className="qr-title">Chú rể Trung Hiếu</p>
                                 </div>
                             </div>
                         </div>
-                        <p>🎉 Lời chúc từ trái tim của quý vị là món quà quý giá nhất với chúng tôi.</p>
+                        <p>🎉 Lời chúc từ trái tim của quý vị là món quà quý giá nhất với chúng tôi ❤️</p>
                     </div>
                 </div>
             )}
