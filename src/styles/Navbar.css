@@ -5,9 +5,10 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.7); /* Nền mờ */
+    background-color: rgba(0, 0, 0, 0.85); /* Nền mờ hơn */
     padding: 10px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out; /* Hiệu ứng mượt */
 }
 
 /* Container của navbar */
@@ -51,46 +52,51 @@
 .navbar-toggle {
     display: none;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    z-index: 1200; /* Đảm bảo menu toggle nằm trên menu */
 }
 
 .navbar-toggle-icon {
-    width: 25px;
-    height: 3px;
+    width: 30px;
+    height: 4px;
     background-color: white;
-    margin: 5px 0;
+    margin: 4px 0;
     transition: 0.3s;
 }
 
 /* Khi menu toggle được mở trên mobile */
 .navbar-links.active {
     display: flex;
-    flex-direction: column; /* Hiển thị liên kết dưới dạng cột khi mở menu trên mobile */
+    flex-direction: column; /* Hiển thị dưới dạng cột */
     position: absolute;
     top: 60px;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.9); /* Nền menu mobile */
     padding: 20px;
+    text-align: center;
+    gap: 15px; /* Khoảng cách giữa các liên kết */
+    transition: transform 0.3s ease-in-out; /* Hiệu ứng mượt */
+    transform: translateY(0); /* Vị trí khi menu được mở */
 }
 
 /* Responsive cho mobile */
 @media screen and (max-width: 768px) {
     .navbar-links {
-        display: flex;
-        justify-content: center;
-        flex-wrap: no-wrap; /* Đảm bảo các liên kết không bị xuống dòng */
+        display: none; /* Ẩn menu mặc định trên mobile */
     }
 
     .navbar-toggle {
         display: flex;
     }
 
-    .navbar-links.active {
-        display: block; /* Khi mở menu, các liên kết sẽ hiển thị dưới dạng cột */
+    .navbar-link a {
+        font-size: 1.1rem; /* Giảm kích thước font */
     }
 
-    .navbar-link a {
-        font-size: 1.1rem; /* Giảm kích thước font trên mobile */
+    .navbar-links.active {
+        display: flex; /* Hiển thị khi menu được mở */
     }
 }

@@ -19,7 +19,11 @@ function Navbar() {
 
                 {/* Thanh điều hướng */}
                 <ul className={`navbar-links ${active ? 'active' : ''}`}>
+                    <li className="navbar-link"><a href="#invitation">Câu Chuyện</a></li>
                     <li className="navbar-link"><a href="#invitation">Lời Mời</a></li>
+                    <li className="navbar-link"><a href="#invitation">Hôn Lễ</a></li>
+                    <li className="navbar-link"><a href="#invitation">Ảnh Cưới</a></li>
+                    <li className="navbar-link"><a href="#invitation">Quà Cưới</a></li>
                     <li className="navbar-link"><a href="#register">Đăng ký tham gia</a></li>
                 </ul>
 
