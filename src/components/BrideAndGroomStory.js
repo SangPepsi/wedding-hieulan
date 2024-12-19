@@ -43,21 +43,24 @@ function BrideAndGroomStory() {
                     <p className="bride-groom-name">Phương Lan</p>
                 </div>
             </div>
+
             <h2 className="story-title">Và.. Ngày ấy đã tới</h2>
-            <p className="invitation-text">Trân trọng kính mời!</p>
-            <p className="invitation-description">
-                Tới dự bữa tiệc mừng lễ thành hôn, chung vui cùng gia đình chúng tôi.
-            </p>
-            <p className="invitation-description">
-                Được tổ chức vào Thứ Tư ngày 08 tháng 01 năm 2025.
-                (Tức ngày 09 tháng 12 năm 2024)
-            </p>
-            <p className="invitation-text">Tại: TƯ GIA NHÀ TRAI</p>
-            <p className="invitation-description">
-                Đình Làng Thôn Tất Viên - Xã Thủ Sỹ - Huyện Tiên Lữ - Tỉnh Hưng Yên
-            </p>
+            <div className="invitation-details">
+                <p className="invitation-text">Trân trọng kính mời!</p>
+                <p className="invitation-description">
+                    Tới dự bữa tiệc mừng lễ thành hôn, chung vui cùng gia đình chúng tôi.
+                </p>
+                <div className="event-date">
+                    <p className="date-gregorian">Thứ Tư, ngày 08 tháng 01 năm 2025</p>
+                    <p className="date-lunar">(Tức ngày 09 tháng 12 năm 2024)</p>
+                </div>
+                <p className="invitation-location-title">Tại: TƯ GIA NHÀ TRAI</p>
+                <p className="invitation-description">
+                    Đình Làng Thôn Tất Viên - Xã Thủ Sỹ - Huyện Tiên Lữ - Tỉnh Hưng Yên
+                </p>
+            </div>
             {/* Component HouseInfo */}
-            <HouseInfo/>
+            <HouseInfo />
         </div>
     );
 }
