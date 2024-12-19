@@ -1,110 +1,105 @@
-/* Thiết kế tổng thể */
+/* Tổng thể container */
 .house-info {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
     gap: 40px;
-    margin-top: 50px;
-    padding: 0 10px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: linear-gradient(145deg, #eef2f3, #dfe9f3); /* Nền gradient dịu nhẹ */
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Khối thông tin */
+/* Khối thông tin nhà */
 .house {
     flex: 1;
-    padding: 20px;
-    background: #f8f9fa; /* Màu nền sáng nhẹ */
-    border: 2px solid #e2e6ea; /* Viền nhẹ nhàng, tông xám nhạt */
-    border-radius: 15px; /* Bo góc mềm mại */
-    background-image: url('https://www.transparenttextures.com/patterns/linen.png'); /* Hoa văn nhẹ nhàng */
-    background-size: cover;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    min-width: 320px;
+    max-width: 400px;
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
     text-align: center;
-    width: 250px;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Đảm bảo ảnh nền không tràn ra ngoài */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 /* Hiệu ứng khi hover */
 .house:hover {
-    transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Đổ bóng mạnh hơn khi hover */
+    transform: translateY(-5px); /* Hiệu ứng nâng nhẹ */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #f5f7fa, #e4f1fe); /* Thay đổi màu nền */
 }
 
-/* Tiêu đề khối */
+/* Tiêu đề của nhà */
 .house h4 {
-    font-size: 1.4em;
-    color: #0066cc; /* Màu xanh cho tiêu đề */
-    margin-bottom: 15px;
-    font-weight: bold;
+    font-size: 1.8rem;
+    color: #1976d2; /* Màu xanh lam đậm */
+    margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
 }
 
-/* Căn chỉnh bố mẹ thẳng hàng */
+/* Thông tin thành viên */
 .parent {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    align-items: flex-start; /* Căn trái */
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #e8e8e8;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-/* Thông tin chi tiết */
-.house p {
-    font-size: 1em;
-    color: #555;
+.parent p {
+    font-size: 1.1rem;
+    color: #424242;
     margin: 0;
-}
-
-.house strong {
-    color: #333;
-}
-
-/* Nhãn cho các thông tin */
-.house .label {
-    font-weight: bold;
-    color: #333;
-}
-
-/* Các nút chức năng */
-.actions {
     display: flex;
-    gap: 10px;
-    margin-top: 15px;
+    align-items: center;
 }
 
-/* Nút sửa */
-.edit {
-    background-color: #28a745;
-    color: white;
-    padding: 5px 10px;
-    border: 2px solid #28a745;
-    border-radius: 5px;
-    cursor: pointer;
+.parent strong {
+    color: #212121;
+}
+
+.label {
     font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s ease;
+    color: #37474f;
+    margin-right: 10px;
+    min-width: 60px; /* Đảm bảo độ rộng nhãn đồng đều */
+    text-align: left;
 }
 
-.edit:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
+/* Thêm phần trích dẫn */
+.quote {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 1rem;
+    color: #607d8b;
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #bbdefb;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Nút xóa */
-.delete {
-    background-color: #dc3545;
-    color: white;
-    padding: 5px 10px;
-    border: 2px solid #dc3545;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s ease;
-}
+/* Responsive */
+@media (max-width: 768px) {
+    .house-info {
+        flex-direction: column;
+        gap: 30px;
+    }
 
-.delete:hover {
-    background-color: #c82333;
-    transform: translateY(-2px);
+    .house {
+        width: 100%;
+    }
 }
