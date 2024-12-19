@@ -4,7 +4,7 @@ import '../styles/BrideAndGroomStory.css';
 
 function BrideAndGroomStory() {
     return (
-        <div id="invitation" className="header-content">
+        <div id="OurStory" className="header-content">
             <div className="falling-flowers"></div>
             {/* Hiệu ứng hoa rơi */}
 
@@ -45,7 +45,7 @@ function BrideAndGroomStory() {
             </div>
 
             <h2 className="story-title">Và.. Ngày ấy đã tới</h2>
-            <div className="invitation-details">
+            <div id="invitation" className="invitation-details">
                 <p className="invitation-text">Trân trọng kính mời!</p>
                 <p className="invitation-description">
                     Tới dự bữa tiệc mừng lễ thành hôn, chung vui cùng gia đình chúng tôi.

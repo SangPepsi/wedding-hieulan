@@ -24,7 +24,7 @@ function GiftBox() {
     };
 
     return (
-        <div className="gift-box-container">
+        <div id="gift-box" className="gift-box-container">
             {/* Icon Hòm nhận quà */}
             <div className="gift-box-wrapper" onClick={toggleModal}>
                 <div className="gift-box-icon">

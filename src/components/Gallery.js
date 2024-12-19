@@ -38,7 +38,7 @@ function Gallery() {
     }, [currentIndex, images]);
 
     return (
-        <div className="gallery">
+        <div id="picture" className="gallery">
             <h2 className="gallery-title">Bộ Sưu Tập Ảnh</h2>
             <p className="gallery-description">Khám phá những khoảnh khắc đáng nhớ qua từng bức ảnh!</p>
             <div className="gallery-grid">

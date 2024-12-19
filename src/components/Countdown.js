@@ -1,63 +1,98 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/Countdown.css';
+import React, { useState } from 'react';
+import '../styles/RSVPForm.css';
 
-function Countdown() {
-    const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-    const [isWeddingDay, setIsWeddingDay] = useState(false);
+function RSVPForm() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [attending, setAttending] = useState(false);
+    const [notAttending, setNotAttending] = useState(false);
+    const [error, setError] = useState('');
 
-    useEffect(() => {
-        const targetDate = new Date('2025-01-08T11:00:00');
-        const interval = setInterval(() => {
-            const now = new Date();
-            const difference = targetDate - now;
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-            if (difference <= 0) {
-                clearInterval(interval);
-                setIsWeddingDay(true);
-            } else {
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-                setTimeLeft({
-                    days,
-                    hours,
-                    minutes,
-                    seconds,
-                });
-            }
-        }, 1000);
+        if (!name || !email) {
+            setError('Vui lòng nhập tên và email!');
+            return;
+        }
 
-        return () => clearInterval(interval);
-    }, []);
+        setError('');
+        let response = attending
+            ? `Cảm ơn ${name} đã phản hồi và xác nhận tham gia lễ cưới!`
+            : notAttending
+                ? `Cảm ơn ${name} đã phản hồi và không thể tham gia lễ cưới.`
+                : `Cảm ơn ${name} đã phản hồi!`;
+        alert(response);
+    };
 
     return (
-        <div className="countdown-container">
-            <h2 className="countdown-title">
-                {isWeddingDay
-                    ? "Chúc mừng! Hôm nay là ngày trọng đại của hai bạn!"
-                    : "Còn bao nhiêu thời gian nữa đến lễ cưới?"}
-            </h2>
-            {!isWeddingDay && (
-                <p className="countdown-description">
-                    "Ngày cưới sẽ là một hành trình mới. Hãy cùng chờ đợi khoảnh khắc đặc biệt này!"
-                </p>
-            )}
-            <div className="countdown-blocks">
-                {Object.entries(timeLeft).map(([key, value]) => (
-                    <div className="time-block" key={key}>
-                        <span className="time-number">{value}</span>
-                        <span className="time-label">
-                            {key === "days" ? "Ngày"
-                                : key === "hours" ? "Giờ"
-                                    : key === "minutes" ? "Phút"
-                                        : "Giây"}
-                        </span>
+        <div className="rsvp-form-container" id="register"> {/* Thêm id="register" */}
+            <div className="rsvp-form">
+                <h2>Tham gia lễ cưới</h2>
+                {error && <div className="error-message">{error}</div>}
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label>Tên của bạn</label>
+                        <input
+                            type="text"
+                            placeholder="Nhập tên"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            required
+                        />
                     </div>
-                ))}
+
+                    <div className="form-group">
+                        <label>Email của bạn</label>
+                        <input
+                            type="email"
+                            placeholder="Nhập email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Chọn tham gia</label>
+                        <div className="radio-group">
+                            <label>
+                                <input
+                                    type="radio"
+                                    checked={attending}
+                                    onChange={() => {
+                                        setAttending(true);
+                                        setNotAttending(false);
+                                    }}
+                                />
+                                Tôi sẽ tham dự
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    checked={notAttending}
+                                    onChange={() => {
+                                        setNotAttending(true);
+                                        setAttending(false);
+                                    }}
+                                />
+                                Tôi không thể tham dự
+                            </label>
+                        </div>
+                    </div>
+
+                    {notAttending && (
+                        <div className="not-attending-note">
+                            <p>Cảm ơn bạn đã thông báo!</p>
+                        </div>
+                    )}
+
+                    <button type="submit" className="submit-btn">Gửi phản hồi</button>
+                </form>
             </div>
         </div>
     );
 }
 
-export default Countdown;
+export default RSVPForm;
