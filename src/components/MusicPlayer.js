@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import "../styles/MusicPlayer.css";
+import "../styles/MusicPlayer.css"; // Thêm CSS vào đây
 
 const MusicPlayer = () => {
     const audioRef = useRef(null);
@@ -10,8 +10,9 @@ const MusicPlayer = () => {
             try {
                 await audioRef.current.play();
                 setIsPlaying(true);
+                console.log("Nhạc bắt đầu phát.");
             } catch (err) {
-                console.warn("Autoplay bị chặn. Người dùng cần bấm nút phát.", err);
+                console.warn("Autoplay bị chặn. Người dùng cần bấm nút để phát nhạc.", err);
             }
         };
         tryPlay();
@@ -20,25 +21,34 @@ const MusicPlayer = () => {
     const togglePlay = () => {
         if (isPlaying) {
             audioRef.current.pause();
+            setIsPlaying(false);
             console.log("Nhạc đã dừng.");
         } else {
             audioRef.current.play()
-                .then(() => console.log("Nhạc bắt đầu phát."))
+                .then(() => {
+                    setIsPlaying(true);
+                    console.log("Nhạc bắt đầu phát.");
+                })
                 .catch((err) => console.error("Không thể phát nhạc:", err));
         }
-        setIsPlaying(!isPlaying);
     };
 
     return (
         <div className="music-player">
-            <button onClick={togglePlay} className={isPlaying ? "pause-button" : "play-button"}>
+            {/* Ghi chú nhỏ */}
+            <div className="note">
+                <p>Nhấn vào nút này để phát nhạc.</p>
+            </div>
+
+            <button className="play-button" onClick={togglePlay}>
                 <img
-                    src={isPlaying ? "/images/pause-icon.png" : "/images/music-icon.png"}
-                    alt={isPlaying ? "Pause" : "Play"}
-                    className="music-icon"
+                    src={isPlaying ? "/images/pause-icon.png" : "/images/play-icon.png"}
+                    alt={isPlaying ? "Pause icon" : "Play icon"}
+                    className="play-icon"
                 />
             </button>
-            <audio ref={audioRef}>
+            <div className="play-text">Phát nhạc</div>
+            <audio ref={audioRef} autoPlay muted={false}>
                 <source src="/music/NguoiToiYeu.mp3" type="audio/mpeg" />
                 Trình duyệt của bạn không hỗ trợ phát nhạc.
             </audio>
