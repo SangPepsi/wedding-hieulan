@@ -70,17 +70,60 @@
     letter-spacing: 1px;
 }
 
-/* Responsive */
+/* Responsive cho mobile */
 @media (max-width: 768px) {
+    .countdown-blocks {
+        gap: 10px;
+        justify-content: center;
+    }
+
     .time-block {
-        width: 90px;
+        width: 85px; /* Thu nhỏ khối để vừa màn hình mobile */
+        padding: 10px;
     }
 
     .time-number {
-        font-size: 2rem;
+        font-size: 2rem; /* Giảm kích thước số */
     }
 
     .time-label {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Giảm kích thước chữ */
+    }
+
+    .countdown-title {
+        font-size: 1.5rem; /* Tiêu đề nhỏ hơn trên màn hình nhỏ */
+    }
+
+    .countdown-description {
+        font-size: 0.9rem; /* Thu nhỏ mô tả */
+        margin-bottom: 20px;
+    }
+}
+
+/* Responsive cho màn hình siêu nhỏ (dưới 480px) */
+@media (max-width: 480px) {
+    .time-block {
+        width: 75px; /* Cực kỳ gọn gàng */
+        padding: 8px;
+    }
+
+    .time-number {
+        font-size: 1.8rem; /* Kích thước số vẫn dễ đọc */
+    }
+
+    .time-label {
+        font-size: 0.8rem; /* Chữ gọn gàng hơn */
+    }
+
+    .countdown-container {
+        padding: 30px 15px; /* Giảm padding để vừa khung */
+    }
+
+    .countdown-title {
+        font-size: 1.3rem; /* Tiêu đề nhỏ gọn hơn nữa */
+    }
+
+    .countdown-description {
+        font-size: 0.85rem; /* Tối ưu hóa dòng mô tả */
     }
 }
