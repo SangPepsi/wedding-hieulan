@@ -23,17 +23,13 @@ function CoverImage() {
     }, [images.length]);
 
     return (
-        <div className="cover-image">
-            {/* Hiển thị ảnh bìa */}
-            <img
-                src={images[currentImage]}
-                alt="Ảnh Bìa"
-                className="cover-image-img"
-            />
-
+        <div
+            className="cover-image"
+            style={{ backgroundImage: `url(${images[currentImage]})` }}  // Đặt ảnh làm background
+        >
             {/* Hiệu ứng hoa rơi */}
             <div className="falling-flowers">
-                {Array.from({ length: 15 }).map((_, index) => (
+                {Array.from({ length: 20 }).map((_, index) => (
                     <div key={index} className={`flower flower-${index + 1}`}></div>
                 ))}
             </div>
@@ -42,7 +38,7 @@ function CoverImage() {
             <div className="cover-content">
                 <h1 className="cover-title">Trung Hiếu ❤️ Phương Lan</h1>
                 <p className="cover-date">08/01/2025</p>
-                <p className="cover-invite">Trân trọng kính mời bạn đến dự lễ cưới của chúng tôi</p>
+                <p className="cover-invite">Trân trọng kính mời bạn đến dự lễ cưới của chúng tôi !</p>
             </div>
 
             {/* Navbar */}
