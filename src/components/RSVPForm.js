@@ -5,7 +5,7 @@ function RSVPForm() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [attending, setAttending] = useState(false);
-    const [notAttending, setNotAttending] = useState(false); // Thêm state cho "Không tham gia"
+    const [notAttending, setNotAttending] = useState(false);
     const [error, setError] = useState('');
 
     const handleSubmit = (e) => {
@@ -26,54 +26,71 @@ function RSVPForm() {
     };
 
     return (
-        <div className="rsvp-form">
-            <h2>Tham gia lễ cưới</h2>
-            {error && <div className="error-message">{error}</div>}
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Tên của bạn"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-                <input
-                    type="email"
-                    placeholder="Email của bạn"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <label>
-                    <input
-                        type="checkbox"
-                        checked={attending}
-                        onChange={() => {
-                            setAttending(!attending);
-                            setNotAttending(false); // Hủy bỏ "Không tham gia" khi chọn "Tham gia"
-                        }}
-                    />
-                    Tôi sẽ tham dự
-                </label>
-
-                <label>
-                    <input
-                        type="checkbox"
-                        checked={notAttending}
-                        onChange={() => {
-                            setNotAttending(!notAttending);
-                            setAttending(false); // Hủy bỏ "Tham gia" khi chọn "Không tham gia"
-                        }}
-                    />
-                    Tôi không thể tham dự
-                </label>
-
-                {notAttending && (
-                    <div className="not-attending-note">
-                        <p>Cám ơn bạn đã thông báo !! </p>
+        <div className="rsvp-form-container">
+            <div className="rsvp-form">
+                <h2>Tham gia lễ cưới</h2>
+                {error && <div className="error-message">{error}</div>}
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label>Tên của bạn</label>
+                        <input
+                            type="text"
+                            placeholder="Nhập tên"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            required
+                        />
                     </div>
-                )}
 
-                <button type="submit">Gửi phản hồi</button>
-            </form>
+                    <div className="form-group">
+                        <label>Email của bạn</label>
+                        <input
+                            type="email"
+                            placeholder="Nhập email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Chọn tham gia</label>
+                        <div className="radio-group">
+                            <label>
+                                <input
+                                    type="radio"
+                                    checked={attending}
+                                    onChange={() => {
+                                        setAttending(true);
+                                        setNotAttending(false);
+                                    }}
+                                />
+                                Tôi sẽ tham dự
+                            </label>
+
+                            <label>
+                                <input
+                                    type="radio"
+                                    checked={notAttending}
+                                    onChange={() => {
+                                        setNotAttending(true);
+                                        setAttending(false);
+                                    }}
+                                />
+                                Tôi không thể tham dự
+                            </label>
+                        </div>
+                    </div>
+
+                    {notAttending && (
+                        <div className="not-attending-note">
+                            <p>Cảm ơn bạn đã thông báo!</p>
+                        </div>
+                    )}
+
+                    <button type="submit" className="submit-btn">Gửi phản hồi</button>
+                </form>
+            </div>
         </div>
     );
 }

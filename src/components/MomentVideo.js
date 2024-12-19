@@ -4,7 +4,7 @@ import '../styles/MomentVideo.css'; // Đảm bảo rằng bạn đã tạo styl
 function MomentVideo() {
     return (
         <div className="moment-video">
-            <h2 className="video-title">Video khoảnh khắc</h2>
+            <h2 className="video-title">Khoảnh Khắc Đặc Biệt</h2>
             <div className="video-container">
                 <video
                     controls

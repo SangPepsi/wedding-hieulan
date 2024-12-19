@@ -1,24 +1,87 @@
+/* General Styling */
 .moment-video {
     margin-top: 40px;
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
+    background-color: #f4f8ff; /* Nền nhẹ nhàng cho phần video */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Thêm bóng nhẹ cho phần chứa video */
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa cho container */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .video-title {
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 2rem; /* Kích thước tiêu đề phù hợp cho các màn hình lớn */
+    font-weight: 600;
+    color: #333; /* Màu tối cho tiêu đề để nổi bật */
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu khi hover */
+    line-height: 1.4;
+}
+
+.video-title:hover {
+    color: #0066cc; /* Thay đổi màu khi hover */
 }
 
 .video-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
+    border-radius: 8px; /* Góc bo tròn cho video container */
+    background-color: #fff; /* Màu nền trắng cho phần chứa video */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    width: 100%;
 }
 
 .video-player {
-    max-width: 100%;
+    width: 100%;
+    max-width: 80%; /* Giảm kích thước video một chút */
     height: auto;
     border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng hover cho video */
+}
+
+.video-player:hover {
+    transform: scale(1.05); /* Phóng to video một chút khi hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Bóng đổ rõ hơn khi hover */
+}
+
+/* Media Queries cho thiết bị di động */
+@media (max-width: 768px) {
+    .video-title {
+        font-size: 1.8rem; /* Kích thước tiêu đề nhỏ hơn trên màn hình nhỏ */
+        margin-bottom: 15px;
+        padding: 0 15px;
+    }
+
+    .moment-video {
+        padding: 20px 15px;
+    }
+
+    .video-container {
+        padding: 10px;
+    }
+
+    .video-player {
+        max-width: 90%; /* Video sẽ chiếm tối đa 90% chiều rộng trên màn hình nhỏ */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-title {
+        font-size: 1.6rem; /* Tiêu đề nhỏ hơn trên màn hình rất nhỏ */
+    }
+
+    .moment-video {
+        padding: 20px 10px;
+    }
+
+    .video-player {
+        max-width: 100%; /* Video sẽ chiếm toàn bộ chiều rộng trên điện thoại */
+    }
 }
