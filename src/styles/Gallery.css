@@ -1,46 +1,76 @@
-/* gallery.css */
 .gallery {
     padding: 20px;
     max-width: 1200px;
-    margin: auto; /* Căn giữa toàn bộ gallery */
+    margin: auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-title {
     text-align: center;
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #4CAF50;
+    font-weight: bold;
 }
 
-/* Responsive grid layout */
+.gallery-description {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px; /* Khoảng cách giữa các ảnh */
+    gap: 15px;
 }
 
-/* Grid items */
 .grid-item {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .grid-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.08);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .grid-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
-/* Modal */
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.grid-item:hover .grid-overlay {
+    opacity: 1;
+}
+
 .modal {
     position: fixed;
     top: 0;
@@ -62,6 +92,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .modal-image {
@@ -71,22 +104,21 @@
     object-fit: contain;
 }
 
-/* Navigation buttons */
 .navigation-buttons {
     position: absolute;
     top: 50%;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0 20px;
     transform: translateY(-50%);
 }
 
 button {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: black;
+    background-color: #4CAF50;
+    color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
@@ -94,10 +126,9 @@ button {
 }
 
 button:hover {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: #45a049;
 }
 
-/* Close button */
 .close-button {
     position: absolute;
     top: 10px;
@@ -114,39 +145,4 @@ button:hover {
 
 .close-button:hover {
     background-color: darkred;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .gallery-title {
-        font-size: 24px;
-    }
-
-    .gallery-grid {
-        gap: 8px;
-    }
-
-    .modal-image {
-        max-height: 60vh;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery-title {
-        font-size: 20px;
-    }
-
-    .navigation-buttons {
-        padding: 0 5px;
-    }
-
-    button {
-        font-size: 12px;
-        padding: 6px 10px;
-    }
 }

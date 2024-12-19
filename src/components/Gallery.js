@@ -2,7 +2,6 @@ import React, { useState, useCallback, useMemo } from 'react';
 import '../styles/Gallery.css';
 
 function Gallery() {
-    // Sử dụng useMemo để ghi nhớ mảng images
     const images = useMemo(() => [
         '/images/anh1.JPG',
         '/images/anh3.JPG',
@@ -12,34 +11,36 @@ function Gallery() {
         '/images/anh7.JPG',
         '/images/anh12.JPG',
         '/images/anh2.JPG',
-    ], []);  // Mảng phụ thuộc rỗng, mảng này chỉ được tạo lại khi component render lần đầu
+    ], []);
 
     const [selectedImage, setSelectedImage] = useState(null);
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const openModal = (image, index) => {
+    const openModal = useCallback((image, index) => {
         setSelectedImage(image);
         setCurrentIndex(index);
-    };
+    }, []);
 
-    const closeModal = () => {
+    const closeModal = useCallback(() => {
         setSelectedImage(null);
-    };
+    }, []);
 
-    // Sử dụng useCallback để "ghi nhớ" hàm goToPrevious
     const goToPrevious = useCallback(() => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
-        setSelectedImage(images[currentIndex === 0 ? images.length - 1 : currentIndex - 1]);
+        const newIndex = (currentIndex === 0 ? images.length - 1 : currentIndex - 1);
+        setCurrentIndex(newIndex);
+        setSelectedImage(images[newIndex]);
     }, [currentIndex, images]);
 
     const goToNext = useCallback(() => {
-        setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-        setSelectedImage(images[currentIndex === images.length - 1 ? 0 : currentIndex + 1]);
+        const newIndex = (currentIndex === images.length - 1 ? 0 : currentIndex + 1);
+        setCurrentIndex(newIndex);
+        setSelectedImage(images[newIndex]);
     }, [currentIndex, images]);
 
     return (
         <div className="gallery">
-            <h2 className="gallery-title">Ảnh Cưới</h2>
+            <h2 className="gallery-title">Bộ Sưu Tập Ảnh</h2>
+            <p className="gallery-description">Khám phá những khoảnh khắc đáng nhớ qua từng bức ảnh!</p>
             <div className="gallery-grid">
                 {images.map((image, index) => (
                     <div
@@ -52,6 +53,7 @@ function Gallery() {
                             alt={`Ảnh ${index + 1}`}
                             className="grid-image"
                         />
+                        <div className="grid-overlay">Xem ảnh</div>
                     </div>
                 ))}
             </div>
@@ -65,8 +67,8 @@ function Gallery() {
                             className="modal-image"
                         />
                         <div className="navigation-buttons">
-                            <button onClick={goToPrevious}>←</button>
-                            <button onClick={goToNext}>→</button>
+                            <button onClick={goToPrevious}>← Trước</button>
+                            <button onClick={goToNext}>Tiếp →</button>
                         </div>
                         <button className="close-button" onClick={closeModal}>×</button>
                     </div>
