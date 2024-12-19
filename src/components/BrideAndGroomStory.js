@@ -16,7 +16,7 @@ function BrideAndGroomStory() {
                         alt="Chú Rể"
                         className="bride-groom-image"
                     />
-                    <p className="bride-groom-name"></p>
+                    <p className="bride-groom-name">Trung Hiếu</p>
                 </div>
 
                 {/* Câu chuyện tình yêu */}
@@ -40,13 +40,21 @@ function BrideAndGroomStory() {
                         alt="Cô Dâu"
                         className="bride-groom-image"
                     />
-                    <p className="bride-groom-name"></p>
+                    <p className="bride-groom-name">Phương Lan</p>
                 </div>
             </div>
             <h2 className="story-title">Và.. Ngày ấy đã tới</h2>
-            <p className="invitation-text">Trân trọng kính mời</p>
+            <p className="invitation-text">Trân trọng kính mời!</p>
             <p className="invitation-description">
-                Tới dự bữa tiệc Mừng lễ thành hôn, chung vui cùng gia đình chúng tôi.
+                Tới dự bữa tiệc mừng lễ thành hôn, chung vui cùng gia đình chúng tôi.
+            </p>
+            <p className="invitation-description">
+                Được tổ chức vào Thứ Tư ngày 08 tháng 01 năm 2025.
+                (Tức ngày 09 tháng 12 năm 2024)
+            </p>
+            <p className="invitation-text">Tại: TƯ GIA NHÀ TRAI</p>
+            <p className="invitation-description">
+                Đình Làng Thôn Tất Viên - Xã Thủ Sỹ - Huyện Tiên Lữ - Tỉnh Hưng Yên
             </p>
             {/* Component HouseInfo */}
             <HouseInfo/>

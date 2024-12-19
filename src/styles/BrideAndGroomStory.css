@@ -1,4 +1,4 @@
-/* Container của câu chuyện tình yêu */
+/* CSS Styles */
 #story-container {
     display: flex;
     justify-content: space-between;
@@ -8,84 +8,87 @@
     margin-top: 50px;
 }
 
-/* Căn chỉnh ảnh chú rể và cô dâu */
 .bride-groom-container {
     position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
-/* Chú rể (bên trái) */
 .bride-groom-container.left {
     margin-right: 40px;
 }
 
-/* Cô dâu (bên phải) */
 .bride-groom-container.right {
     margin-left: 40px;
 }
 
-/* Ảnh chú rể và cô dâu */
 .bride-groom-image {
     width: 250px;
     height: 250px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid white;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    z-index: 1;
 }
 
-/* Hiệu ứng khi hover vào ảnh */
 .bride-groom-image:hover {
     transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Trái tim ở giữa */
-.heart-shape {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
-    background-color: #ff69b4;
-    clip-path: polygon(50% 0%, 0% 35%, 0% 100%, 50% 65%, 100% 100%, 100% 35%);
-    z-index: 0;
-}
-
-/* Câu chuyện tình yêu */
-.story-title {
-    font-size: 2rem;
+.bride-groom-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
     font-weight: bold;
+    margin-top: 10px;
     color: #4682B4;
-    margin-bottom: 20px;
+}
+
+.story-title {
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #2F4F4F;
+    margin: 30px 0;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
 }
 
-/* Nội dung câu chuyện */
 .story-content {
     font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif;
     line-height: 1.8;
-    color: #333;
+    color: #4B4B4B;
     text-align: justify;
     margin: 10px 0;
     padding: 0 20px;
 }
 
-/* Media Queries cho responsive design */
+.invitation-text {
+    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #8B0000;
+    text-align: center;
+    margin: 20px 0;
+}
 
-/* Khi màn hình nhỏ (mobile) */
+.invitation-description {
+    font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    text-align: center;
+    margin: 10px 0;
+}
+
 @media (max-width: 768px) {
     #story-container {
         flex-direction: column;
         align-items: center;
-        padding: 0 10px;
     }
 
     .bride-groom-container {
@@ -98,11 +101,10 @@
     }
 
     .story-title {
-        font-size: 1.6rem;
+        font-size: 2rem;
     }
 
     .story-content {
         font-size: 1rem;
-        padding: 0 10px;
     }
 }
