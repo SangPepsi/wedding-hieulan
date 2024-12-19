@@ -37,8 +37,6 @@ function CoverImage() {
             {/* Nội dung trên ảnh bìa */}
             <div className="cover-content">
                 <h1 className="cover-title">Trung Hiếu ❤️ Phương Lan</h1>
-                <p className="cover-date">08/01/2025</p>
-                <p className="cover-invite">Trân trọng kính mời bạn đến dự lễ cưới của chúng tôi !</p>
             </div>
 
             {/* Navbar */}
