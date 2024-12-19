@@ -24,6 +24,7 @@
     width: 250px;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Đảm bảo ảnh nền không tràn ra ngoài */
 }
 
 /* Hiệu ứng khi hover */

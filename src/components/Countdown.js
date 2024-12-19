@@ -34,25 +34,27 @@ function Countdown() {
     return (
         <div className="countdown-container">
             <h2 className="countdown-title">
-                {isWeddingDay ? "Chúc mừng ngày cưới!" : "Thời gian còn lại đến lễ cưới"}
+                {isWeddingDay
+                    ? "Chúc mừng! Hôm nay là ngày trọng đại của hai bạn!"
+                    : "Còn bao nhiêu thời gian nữa đến lễ cưới?"}
             </h2>
+            {!isWeddingDay && (
+                <p className="countdown-description">
+                    "Ngày cưới sẽ là một hành trình mới. Hãy cùng chờ đợi khoảnh khắc đặc biệt này!"
+                </p>
+            )}
             <div className="countdown-blocks">
-                <div className="time-block">
-                    <span className="time-number">{timeLeft.days}</span>
-                    <span className="time-label">Ngày</span>
-                </div>
-                <div className="time-block">
-                    <span className="time-number">{timeLeft.hours}</span>
-                    <span className="time-label">Giờ</span>
-                </div>
-                <div className="time-block">
-                    <span className="time-number">{timeLeft.minutes}</span>
-                    <span className="time-label">Phút</span>
-                </div>
-                <div className="time-block">
-                    <span className="time-number">{timeLeft.seconds}</span>
-                    <span className="time-label">Giây</span>
-                </div>
+                {Object.entries(timeLeft).map(([key, value]) => (
+                    <div className="time-block" key={key}>
+                        <span className="time-number">{value}</span>
+                        <span className="time-label">
+                            {key === "days" ? "Ngày"
+                                : key === "hours" ? "Giờ"
+                                    : key === "minutes" ? "Phút"
+                                        : "Giây"}
+                        </span>
+                    </div>
+                ))}
             </div>
         </div>
     );
