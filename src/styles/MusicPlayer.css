@@ -1,0 +1,43 @@
+/* Đảm bảo rằng nhạc player luôn ở một vị trí dễ thấy và di động */
+.music-player {
+    position: fixed; /* Đặt nó cố định ở vị trí nào đó trên trang */
+    top: 50%;        /* Đặt nó ở giữa theo chiều dọc */
+    left: 0;         /* Đặt nó ở phía bên trái màn hình */
+    transform: translateY(-50%); /* Canh giữa theo chiều dọc */
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 70px;     /* Kích thước nút */
+    height: 70px;    /* Kích thước nút */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;  /* Đảm bảo nó luôn hiển thị trên các thành phần khác */
+    transition: transform 0.3s ease-in-out; /* Hiệu ứng di chuyển mượt mà */
+}
+
+/* Hiệu ứng hover */
+button:hover {
+    transform: scale(1.1); /* Tăng kích thước một chút khi hover */
+}
+
+/* Hiệu ứng khi nhấn nút */
+button:active {
+    transform: scale(0.9); /* Giảm kích thước khi nhấn */
+}
+
+/* Định dạng ảnh icon */
+.music-icon {
+    width: 50px;  /* Kích thước ảnh icon */
+    height: 50px; /* Kích thước ảnh icon */
+}
+
+/* Thêm hiệu ứng micro khi phát nhạc */
+.play-button {
+    background-color: #4caf50; /* Màu xanh lá khi phát nhạc */
+}
+
+.pause-button {
+    background-color: #f44336; /* Màu đỏ khi tạm dừng */
+}

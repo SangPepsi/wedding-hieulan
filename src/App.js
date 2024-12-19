@@ -8,6 +8,7 @@ import RSVPForm from './components/RSVPForm';
 import Footer from './components/Footer';
 import MomentVideo from './components/MomentVideo';
 import GiftBox from './components/GiftBox';
+import MusicPlayer from './components/MusicPlayer';
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
             <RSVPForm />
             <GiftBox />
             <Footer />
+            <MusicPlayer />
         </div>
     );
 }

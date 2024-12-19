@@ -4,13 +4,13 @@ import '../styles/Gallery.css';
 function Gallery() {
     const images = useMemo(() => [
         '/images/anh1.JPG',
+        '/images/anh2.JPG',
         '/images/anh3.JPG',
-        '/images/anh9.JPG',
+        '/images/anh4.JPG',
+        '/images/anh5.JPG',
         '/images/anh10.JPG',
         '/images/anh11.JPG',
-        '/images/anh7.JPG',
         '/images/anh12.JPG',
-        '/images/anh2.JPG',
     ], []);
 
     const [selectedImage, setSelectedImage] = useState(null);
