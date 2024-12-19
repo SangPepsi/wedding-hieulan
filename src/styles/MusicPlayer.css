@@ -1,10 +1,13 @@
 .music-player {
     position: fixed;
-    bottom: 10px;
+    bottom: 10px; /* Khoảng cách từ dưới lên */
     left: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Làm nền tối */
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .play-button {
@@ -15,10 +18,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0.7; /* Làm mờ nút */
+    transition: opacity 0.3s ease-in-out; /* Hiệu ứng mờ khi di chuột */
+}
+
+.play-button:hover {
+    opacity: 1; /* Khi hover, nút sẽ sáng lên */
 }
 
 .play-icon {
-    width: 50px;  /* Kích thước của biểu tượng */
+    width: 50px;  /* Kích thước biểu tượng */
     height: 50px;
 }
 
@@ -29,13 +38,44 @@
     text-align: center;
 }
 
-/* Ghi chú nhỏ */
-.note {
-    font-size: 12px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.6); /* Nền mờ */
-    padding: 5px;
-    border-radius: 5px;
-    margin-bottom: 10px;  /* Khoảng cách giữa ghi chú và nút */
-    text-align: center;
+.close-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.close-icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+}
+
+.close-icon:hover {
+    opacity: 1; /* Khi hover, biểu tượng đóng sáng lên */
+}
+
+/* Media Query cho màn hình nhỏ */
+@media (max-width: 600px) {
+    .music-player {
+        bottom: 20px;  /* Dịch xuống dưới một chút trên mobile */
+        left: 10px;
+    }
+
+    .play-icon {
+        width: 40px;  /* Giảm kích thước icon */
+        height: 40px;
+    }
+
+    .play-text {
+        font-size: 12px;  /* Giảm kích thước chữ */
+        margin-top: 3px;
+    }
+
+    .close-icon {
+        width: 18px; /* Giảm kích thước icon đóng */
+        height: 18px;
+    }
 }

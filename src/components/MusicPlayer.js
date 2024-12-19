@@ -1,10 +1,11 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react"; // Giữ useEffect
 import "../styles/MusicPlayer.css"; // Thêm CSS vào đây
 
 const MusicPlayer = () => {
     const audioRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
+    // Ví dụ sử dụng useEffect
     useEffect(() => {
         const tryPlay = async () => {
             try {
@@ -16,7 +17,7 @@ const MusicPlayer = () => {
             }
         };
         tryPlay();
-    }, []);
+    }, []); // Chạy khi component được render lần đầu tiên
 
     const togglePlay = () => {
         if (isPlaying) {
@@ -35,11 +36,6 @@ const MusicPlayer = () => {
 
     return (
         <div className="music-player">
-            {/* Ghi chú nhỏ */}
-            <div className="note">
-                <p>Nhấn vào nút này để phát nhạc.</p>
-            </div>
-
             <button className="play-button" onClick={togglePlay}>
                 <img
                     src={isPlaying ? "/images/pause-icon.png" : "/images/play-icon.png"}
