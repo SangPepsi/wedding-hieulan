@@ -12,6 +12,14 @@ body {
     z-index: 1000;
 }
 
+.gift-box-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
 .gift-box-icon {
     width: 60px;
     height: 60px;
@@ -24,11 +32,16 @@ body {
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    margin-right: 10px;
 }
 
-.gift-box-icon:hover {
+.gift-box-text {
+    font-size: 16px;
+    color: #ff6f61;
+    font-weight: 500;
+}
+
+.gift-box-wrapper:hover .gift-box-icon {
     transform: scale(1.1);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
@@ -74,6 +87,10 @@ body {
     color: #ff6f61;
 }
 
+.gift-details {
+    margin: 20px 0;
+}
+
 .qr-codes {
     display: flex;
     flex-direction: column; /* Mobile sẽ hiển thị dọc */
@@ -89,6 +106,10 @@ body {
     transition: transform 0.3s ease;
 }
 
+.qr-code img:hover {
+    transform: scale(1.05);
+}
+
 .qr-title {
     margin-top: 8px;
     font-size: 14px; /* Chữ nhỏ hơn trên mobile */
@@ -96,7 +117,8 @@ body {
     font-weight: 500;
 }
 
-.qr-overlay {
+/* Modal hiển thị ảnh QR phóng to */
+.image-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -109,7 +131,7 @@ body {
     z-index: 10001;
 }
 
-.qr-overlay img {
+.image-modal-content {
     max-width: 90%;
     max-height: 90%;
     border-radius: 10px;
@@ -122,6 +144,10 @@ body {
         width: 50px;
         height: 50px;
         font-size: 24px;
+    }
+
+    .gift-box-text {
+        font-size: 14px;
     }
 
     .gift-modal-content {

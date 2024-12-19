@@ -26,8 +26,11 @@ function GiftBox() {
     return (
         <div className="gift-box-container">
             {/* Icon Hòm nhận quà */}
-            <div className="gift-box-icon" onClick={toggleModal}>
-                🎁 {/* Icon quà tặng */}
+            <div className="gift-box-wrapper" onClick={toggleModal}>
+                <div className="gift-box-icon">
+                    🎁
+                </div>
+                <p className="gift-box-text">Hòm nhận quà</p>
             </div>
 
             {/* Modal nội dung hộp quà */}
@@ -36,7 +39,7 @@ function GiftBox() {
                     <div className="gift-modal-content">
                         <button className="close-button" onClick={toggleModal}>✖</button>
                         <h2>Hòm Nhận Quà Chúc Mừng</h2>
-                        <p> Cảm ơn sự hiện diện của quý vị </p>
+                        <p>Cảm ơn sự hiện diện của quý vị!</p>
                         <div className="gift-details">
                             <p><strong>💌 Thông tin tài khoản ngân hàng</strong></p>
                             <div className="qr-codes">
@@ -66,7 +69,7 @@ function GiftBox() {
                 </div>
             )}
 
-            {/* Modal hiển thị ảnh QR phóng to (trước cửa sổ hộp quà) */}
+            {/* Modal hiển thị ảnh QR phóng to */}
             {isImageZoomed && (
                 <div className="image-modal">
                     <button className="close-button-qr" onClick={closeImageZoom}>✖</button>
