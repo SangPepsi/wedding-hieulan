@@ -43,7 +43,7 @@ const MusicPlayer = () => {
                     className="play-icon"
                 />
             </button>
-            <div className="play-text">Phát nhạc</div>
+            <div className="play-text">{isPlaying ? "Đang phát nhạc" : "Phát nhạc"}</div>
             <audio ref={audioRef} autoPlay muted={false}>
                 <source src="/music/NguoiToiYeu.mp3" type="audio/mpeg" />
                 Trình duyệt của bạn không hỗ trợ phát nhạc.

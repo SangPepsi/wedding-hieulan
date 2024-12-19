@@ -1,38 +1,41 @@
+/* MusicPlayer.css */
+
 .music-player {
     position: fixed;
-    bottom: 10px; /* Khoảng cách từ dưới lên */
-    left: 10px;
+    top: 50%; /* Đặt giữa màn hình theo chiều dọc */
+    left: 10px; /* Đặt sát bên trái màn hình */
+    transform: translateY(-50%); /* Di chuyển về giữa theo chiều dọc */
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.7); /* Làm nền tối */
-    border-radius: 10px;
-    padding: 10px;
+    flex-direction: row; /* Sắp xếp theo chiều ngang */
+    align-items: center; /* Căn chỉnh các phần tử theo chiều dọc */
+    background-color: transparent; /* Bỏ nền */
+    padding: 0;
+    border: none;
 }
 
 .play-button {
-    background-color: transparent;
-    border: none;
+    background-color: transparent; /* Bỏ nền */
+    border: none; /* Không viền */
     cursor: pointer;
-    padding: 10px;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0.7; /* Làm mờ nút */
-    transition: opacity 0.3s ease-in-out; /* Hiệu ứng mờ khi di chuột */
+    opacity: 0.7; /* Làm mờ icon */
+    transition: opacity 0.3s ease-in-out;
 }
 
 .play-button:hover {
-    opacity: 1; /* Khi hover, nút sẽ sáng lên */
+    opacity: 1; /* Khi hover, icon sẽ sáng lên */
 }
 
 .play-icon {
-    width: 50px;  /* Kích thước biểu tượng */
-    height: 50px;
+    width: 30px;  /* Kích thước biểu tượng */
+    height: 30px;
 }
 
 .play-text {
-    margin-top: 5px;
+    margin-left: 10px; /* Khoảng cách giữa biểu tượng và text */
     font-size: 14px;
     color: white;
     text-align: center;
@@ -45,6 +48,7 @@
     position: absolute;
     top: 5px;
     right: 5px;
+    padding: 0;
 }
 
 .close-icon {
@@ -54,28 +58,24 @@
 }
 
 .close-icon:hover {
-    opacity: 1; /* Khi hover, biểu tượng đóng sáng lên */
+    opacity: 1; /* Khi hover, icon đóng sáng lên */
 }
 
 /* Media Query cho màn hình nhỏ */
 @media (max-width: 600px) {
     .music-player {
-        bottom: 20px;  /* Dịch xuống dưới một chút trên mobile */
-        left: 10px;
+        top: 50%; /* Giữ icon ở giữa màn hình */
+        left: 10px;  /* Đặt sát trái màn hình */
+        transform: translateY(-50%); /* Di chuyển về giữa theo chiều dọc */
     }
 
     .play-icon {
-        width: 40px;  /* Giảm kích thước icon */
-        height: 40px;
+        width: 20px;  /* Giảm kích thước icon */
+        height: 20px;
     }
 
     .play-text {
-        font-size: 12px;  /* Giảm kích thước chữ */
-        margin-top: 3px;
-    }
-
-    .close-icon {
-        width: 18px; /* Giảm kích thước icon đóng */
-        height: 18px;
+        font-size: 9px;  /* Giảm kích thước chữ */
+        margin-left: 5px; /* Giảm khoảng cách chữ */
     }
 }
